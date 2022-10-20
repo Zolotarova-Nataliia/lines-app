@@ -8,6 +8,10 @@ export default function App() {
 
   useEffect(() => {
     const canvas = canvasRef.current!;
+    canvas.getContext("2d")!.canvas.width =
+      canvas.getContext("2d")!.canvas.clientWidth;
+    canvas.getContext("2d")!.canvas.height =
+      canvas.getContext("2d")!.canvas.clientHeight;
     const scene = new Scene(canvas.width, canvas.height);
     sceneRef.current = scene;
   }, []);
